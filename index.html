@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="description" content="DuoMind is a distributed hierarchical framework for multi-robot coordination through semantic communication.">
+  <meta name="keywords" content="DuoMind, multi-robot coordination, semantic communication, VLM, VLA, RoboPoly">
+  <title>DuoMind: Enabling Distributed Multi-Robot Coordination with Semantic Communication</title>
+  <link rel="icon" href="./static/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script defer src="./static/js/index.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <section class="landing-splash" aria-label="DuoMind and RoboPoly introduction">
+    <video class="landing-splash-video" data-montage autoplay muted loop playsinline preload="metadata"
+           poster="./static/images/poster-rollout-montage.webp" tabindex="-1" aria-hidden="true">
+      <source src="./static/videos/duomind-rollout-montage.mp4" type="video/mp4">
+    </video>
+    <div class="landing-splash-mask" aria-hidden="true"></div>
+    <div class="landing-splash-content">
+      <div class="splash-brand splash-brand-duomind">
+        <p class="splash-name">DuoMind</p>
+        <p class="splash-description">Hierarchical Multi-Robot Coordination Framework</p>
+      </div>
+      <span class="splash-divider" aria-hidden="true"></span>
+      <div class="splash-brand splash-brand-robopoly">
+        <p class="splash-name">RoboPoly</p>
+        <p class="splash-description">Multi-Robot Benchmark</p>
+      </div>
+    </div>
+  </section>
+
+  <header class="hero project-hero" id="top">
+    <div class="hero-body">
+      <div class="container is-widescreen">
+        <div class="hero-heading has-text-centered">
+          <h1 class="title publication-title">
+            <span class="title-brand">DuoMind:</span>
+            Enabling Distributed Multi-Robot Coordination with Semantic Communication
+          </h1>
+          <p class="publication-authors">Anonymous Authors</p>
+          <p class="hero-takeaway">
+            DuoMind, a distributed hierarchical framework for multi-robot coordination
+            through semantic communication. Each robot uses a VLA-based action model
+            for low-level execution and a VLM-based orchestrator for high-level reasoning
+            and inter-agent coordination.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section section-soft" id="at-a-glance">
+      <div class="container is-widescreen">
+        <figure class="figure-shell overview-figure">
+          <a href="./static/images/duomind_at_a_glance.png" target="_blank" rel="noopener"
+             aria-label="Open the full-resolution DuoMind overview figure">
+            <img src="./static/images/duomind_at_a_glance.png"
+                 alt="DuoMind overview showing two robot orchestrators exchanging semantic messages, their action models, seven RoboPoly tasks, and average benchmark performance"
+                 width="3200" height="1230">
+          </a>
+          <figcaption>
+            (a) An illustration of DuoMind, a distributed framework combining an orchestrator and action model for multi-robot coordination.
+            (b) RoboPoly is a benchmark we develop for long-horizon coordination under distributed robot control.
+            (c) DuoMind consistently outperforms the baselines across both benchmarks.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="container is-widescreen">
+        <div class="section-heading">
+          <p class="section-kicker">Distributed hierarchy</p>
+          <h2 class="title is-2">Framework Overview</h2>
+          <p>
+            To achieve multi-robot coordination under distributed setting, we adopt a hierarchical framework.
+            At each planning step, the orchestrator at each robot reasons over the task instruction,
+            local observations, and messages received from other robots. It then generates low-level
+            instructions for the action model and semantic messages for peer robots.
+          </p>
+        </div>
+        <figure class="figure-shell architecture-figure">
+          <img loading="lazy" src="./static/images/framework.png"
+               alt="DuoMind architecture with one VLM orchestrator and one VLA action model per robot, low-frequency shared information, and high-frequency actions"
+               width="3030" height="1260">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="robopoly">
+      <div class="container is-widescreen">
+        <div class="section-heading">
+          <p class="section-kicker">Long-horizon benchmark</p>
+          <h2 class="title is-2">RoboPoly</h2>
+          <p>
+            We introduce RoboPoly, a benchmark of seven challenging multi-robot tasks that require
+            long-horizon coordination under distributed control, with each robot acting independently from its available observations.
+          </p>
+        </div>
+        <div class="rollout-gallery" aria-label="Seven RoboPoly task videos">
+          <div class="video-row video-row-three">
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-cook-pot.webp" aria-label="RoboPoly Cook Pot rollout"><source src="./static/videos/robopoly-cook-pot.mp4" type="video/mp4"></video><figcaption>Cook Pot</figcaption></figure>
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-hang-bag.webp" aria-label="RoboPoly Hang Bag rollout"><source src="./static/videos/robopoly-hang-bag.mp4" type="video/mp4"></video><figcaption>Hang Bag</figcaption></figure>
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-exchange-bread.webp" aria-label="RoboPoly Exchange Bread rollout"><source src="./static/videos/robopoly-exchange-bread.mp4" type="video/mp4"></video><figcaption>Exchange Bread</figcaption></figure>
+          </div>
+          <div class="video-row video-row-four">
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-food-serve.webp" aria-label="RoboPoly Food Serve rollout"><source src="./static/videos/robopoly-food-serve.mp4" type="video/mp4"></video><figcaption>Food Serve</figcaption></figure>
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-prepare-snack.webp" aria-label="RoboPoly Prepare Snack rollout"><source src="./static/videos/robopoly-prepare-snack.mp4" type="video/mp4"></video><figcaption>Prepare Snack</figcaption></figure>
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-clean-table.webp" aria-label="RoboPoly Clean Table rollout"><source src="./static/videos/robopoly-clean-table.mp4" type="video/mp4"></video><figcaption>Clean Table</figcaption></figure>
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-put-object-cabinet.webp" aria-label="RoboPoly Put Object Cabinet rollout"><source src="./static/videos/robopoly-put-object-cabinet.mp4" type="video/mp4"></video><figcaption>Put Object Cabinet</figcaption></figure>
+          </div>
+        </div>
+        <p class="rollout-note">The videos above are from DuoMind evaluation results.</p>
+      </div>
+    </section>
+
+    <section class="section" id="experiment-result">
+      <div class="container is-widescreen">
+        <div class="section-heading">
+          <p class="section-kicker">Quantitative evaluation</p>
+          <h2 class="title is-2">Experiment Result</h2>
+          <p>
+            We conduct extensive experiments to evaluate DuoMind across challenging
+            cooperative manipulation tasks on both RoboPoly and RoboTwin. Our results demonstrate the
+            effectiveness of the proposed hierarchical design in multi-robot coordination and further
+            quantify the contributions of integrating orchestrator and inter-agent communication.
+          </p>
+        </div>
+        <div class="rollout-gallery" aria-label="Seven RoboTwin rollout videos">
+          <div class="video-row video-row-three">
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-lift-pot.webp" aria-label="RoboTwin Lift Pot rollout"><source src="./static/videos/robotwin-lift-pot.mp4" type="video/mp4"></video><figcaption>Lift Pot</figcaption></figure>
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-handover-mic.webp" aria-label="RoboTwin Handover Mic rollout"><source src="./static/videos/robotwin-handover-mic.mp4" type="video/mp4"></video><figcaption>Handover Mic</figcaption></figure>
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-pick-diverse-bottles.webp" aria-label="RoboTwin Pick Diverse Bottles rollout"><source src="./static/videos/robotwin-pick-diverse-bottles.mp4" type="video/mp4"></video><figcaption>Pick Diverse Bottles</figcaption></figure>
+          </div>
+          <div class="video-row video-row-four">
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-put-bottles-dustbin.webp" aria-label="RoboTwin Put Bottles in Dustbin rollout"><source src="./static/videos/robotwin-put-bottles-dustbin.mp4" type="video/mp4"></video><figcaption>Put Bottles in Dustbin</figcaption></figure>
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-hanging-mug.webp" aria-label="RoboTwin Hanging Mug rollout"><source src="./static/videos/robotwin-hanging-mug.mp4" type="video/mp4"></video><figcaption>Hanging Mug</figcaption></figure>
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-stack-bowls.webp" aria-label="RoboTwin Stack Bowls Two rollout"><source src="./static/videos/robotwin-stack-bowls.mp4" type="video/mp4"></video><figcaption>Stack Bowls Two</figcaption></figure>
+            <figure class="rollout-tile"><video controls muted loop playsinline preload="none" poster="./static/images/poster-robotwin-put-object-cabinet.webp" aria-label="RoboTwin Put Object Cabinet rollout"><source src="./static/videos/robotwin-put-object-cabinet.mp4" type="video/mp4"></video><figcaption>Put Object Cabinet</figcaption></figure>
+          </div>
+        </div>
+
+        <figure class="figure-shell results-figure table-focus">
+          <img loading="lazy" src="./static/images/robopoly_results.png"
+               alt="Table of success rates for DuoMind and action-model-only baselines on seven RoboPoly tasks"
+               width="1068" height="346">
+        </figure>
+        <figure class="figure-shell results-figure robotwin-table table-focus">
+          <img loading="lazy" src="./static/images/robotwin_results.png"
+               alt="Table of success rates for DuoMind and action-model-only baselines on eight RoboTwin tasks"
+               width="1156" height="348">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="ablations">
+      <div class="container is-widescreen">
+        <div class="section-heading">
+          <h2 class="title is-2">Ablations</h2>
+        </div>
+
+        <div class="ablation-grid">
+          <article class="ablation-panel" id="communication-ablation">
+            <div class="ablation-panel-heading">
+              <h3>Inter-agent Communication Ablation</h3>
+              <p>
+                To further study the effect of the shared messages, we conduct an ablation using
+                DuoMind with π0.5 but without inter-agent communication.
+              </p>
+              <p>
+                The results show that the orchestrated π0.5 system consistently outperforms the non-communicating π0.5 system across all seven RoboPoly tasks. Without inter-agent communication, we observe more frequent
+conflicts and asynchronous behaviors between the two robots.
+              </p>
+            </div>
+            <figure class="figure-shell panel-figure communication-figure">
+              <img loading="lazy" src="./static/images/communication_ablation.png"
+                   alt="Bar chart comparing DuoMind with and without communication across seven RoboPoly tasks"
+                   width="3606" height="1566">
+              <figcaption>
+
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="ablation-panel" id="action-model-compatibility">
+            <div class="ablation-panel-heading">
+              <h3>Action Model Compatibility</h3>
+              <p>
+                To analyze the influence of the action model, we conduct an additional experiment
+                using π0 in place of π0.5. DuoMind with π0 still substantially outperforms the π0-only
+baseline. By introducing high-level reasoning and subtask decomposition through the orchestrator, DuoMind provides more appropriate low-level instructions for the
+evolving multi-agent state and improves coordination over the action-model-only setting.
+              </p>
+            </div>
+            <figure class="figure-shell panel-figure compatibility-figure">
+              <img loading="lazy" src="./static/images/action_model_compatibility.png"
+                   alt="Action model compatibility chart comparing DuoMind with pi zero point five, DuoMind with pi zero, and pi zero only across three RoboPoly tasks"
+                   width="2179" height="1564">
+              <figcaption>
+
+              </figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer anonymous-footer">
+    <div class="container is-max-desktop has-text-centered">
+      <p>Anonymous project page for double-blind review.</p>
+      <p class="template-credit">
+        Website structure adapted from the
+        <a href="https://nerfies.github.io" rel="noopener noreferrer">Nerfies</a> template,
+        licensed under
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener noreferrer">CC BY-SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
